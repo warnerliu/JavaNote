@@ -12,14 +12,15 @@ public class NoteApplication {
 		person.setSex("man");
 		Person clonePerson = null;
 		try {
-			clonePerson = (Person)person.clone();
+			clonePerson = (Person) person.clone();
 		} catch (CloneNotSupportedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			clonePerson = new Person();
 		}
 		System.out.println(person == clonePerson);
-		System.out.println(person.getName() == clonePerson.getName());
+		System.out.println(person.getName() == clonePerson.getName());// true
+																		// clone完的对象中，String对象是浅拷贝
 		person.setName("change name");
 		System.out.println(clonePerson.getName());
 		System.out.println(person.getName() == clonePerson.getName());
