@@ -30,21 +30,4 @@ public class PersonSerializable implements Serializable {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-
-	public Object seriaCopy(Object src) {
-		try {
-			ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
-			ObjectOutputStream out = new ObjectOutputStream(byteOut);
-			out.writeObject(src);
-
-			ByteArrayInputStream byteIn = new ByteArrayInputStream(byteOut.toByteArray());
-			ObjectInputStream in = new ObjectInputStream(byteIn);
-			Object dest = in.readObject();
-			return dest;
-		} catch (Exception e) {
-			// do some error handler
-			return null;
-		}
-	}
-
 }
